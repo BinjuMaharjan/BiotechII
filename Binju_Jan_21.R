@@ -668,7 +668,95 @@ ggplot(mpg, aes(cyl, hwy, colour = class, shape = factor(cyl))) +
     panel.grid.minor = element_blank(),
     strip.background = element_blank(),
      )
+#########################################################
+## Customize visualization
+  library(ggplot2)
+ggplot(mpg, aes(cyl, hwy))+
+  geom_point(mapping = aes(colour = displ, shape = factor(cyl)))+
+  geom_smooth(formula = y ~ x, method = "lm")+
+  scale_colour_viridis_c()+
+  facet_grid(year~drv)+
+  coord_fixed(.2)+
+  theme_light()+
+  theme(panel.grid.minor = element_blank())
 
+?mpg
+
+ggplot(mpg, aes(cyl, hwy))+
+  geom_dotplot (mapping = aes(colour = class, shape = factor(class)), binaxis = "y", stackdir = "center" )+
+  labs(x = "Cylinder",
+       y = "Highway",
+       title = "Cylinder vs Highway")+
+  coord_fixed()+
+  facet_grid(year~fl)
+
+ggplot(mpg, aes(class))+
+  geom_bar(mapping = aes(class))
+
+  #Boxplot for highway miles per gallon and class- type of car; facet using drive train and year
+
+ggplot(mpg, aes(hwy, class))+
+  geom_boxplot(mapping = aes(colour = class))+
+  labs(x = "Highway miles per gallon",
+       y = "Type of car",
+       title = "Highway miles vs Car type",
+       subtitle = "Frequency distribution")+
+coord_fixed(3)+
+  scale_color_viridis_d()+
+  theme_gray()+
+  theme(
+    legend.position = "bottom",
+    axis.line = element_line(linewidth = 0.75),
+    axis.line.x.bottom = element_line(colour = "purple"),
+    axis.line.y.left = element_line(colour = "purple"))
+  
+
+
+#stacked bar for highway miles per gallon and class
+?barplot
+
+ggplot(mpg, aes(x = hwy, fill = class))+
+  geom_bar(position = "stack")+
+  labs(x = " Highway miles per gallon")+
+      scale_color_viridis_c()+
+  facet_grid(year~drv)+
+  theme_bw()+
+  theme(
+    legend.position = "bottom",
+    axis.line = element_line(linewidth = 0.75),
+    axis.line.x.bottom = element_line(colour = "purple"),
+    axis.line.y.left = element_line(colour = "purple"))
+
+## Discussion activity
+data("economics")
+?economics
+ggplot(economics, aes(x = date, y = unemploy))+
+  geom_line()+
+  labs(x = "Month of data collection",
+       y = "Number of unemployed in thousands",
+       title = " US economic time series",
+       subtitle = "Unemployment")+
+  theme_bw()+
+  theme(
+    legend.position = "bottom",
+    axis.line = element_line(linewidth = 0.75),
+    axis.line.x.bottom = element_line(colour = "purple"),
+    axis.line.y.left = element_line(colour = "purple"))
+?ChickWeight
+
+ggplot(ChickWeight, aes(x = Time, y = weight, group = Chick, color = Diet)) +
+  geom_line() +
+  facet_wrap(~ Diet) +
+  labs(title = "Chick Weight vs Time",
+       subtitle= "For different diets",
+       x = "Time (Days)",
+       y = "Weight (g)") +
+  theme_bw()+
+  theme(
+    legend.position = "bottom",
+    axis.line = element_line(linewidth = 0.75),
+    axis.line.x.bottom = element_line(colour = "brown"),
+    axis.line.y.left = element_line(colour = "brown"))
 
 
 
