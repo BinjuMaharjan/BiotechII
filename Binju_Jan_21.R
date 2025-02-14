@@ -718,7 +718,6 @@ coord_fixed(3)+
 ggplot(mpg, aes(x = hwy, fill = class))+
   geom_bar(position = "stack")+
   labs(x = " Highway miles per gallon")+
-      scale_color_viridis_c()+
   facet_grid(year~drv)+
   theme_bw()+
   theme(
