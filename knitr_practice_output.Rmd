@@ -1,0 +1,96 @@
+---
+title: "knitr practice"
+author: "Binju Maharjan"
+date: "2025-02-13"
+output:
+  word_document: default
+  html_document: default
+---
+```{r}
+summary(cars)
+
+
+```
+```{r,echo=FALSE}
+summary(cars)
+
+```
+```{r eval=TRUE}
+print("This will be printed")
+
+```
+
+
+```{r eval=FALSE}
+print("This will be printed")
+
+```
+```{r include=TRUE}
+print("Good evening")
+
+```
+```{r include=FALSE}
+print("Good evening")
+```
+
+
+```{r warning=TRUE}
+log(-1)
+
+```
+```{r warning=FALSE}
+log(-1)
+
+```
+
+
+```{r fig.width=8, fig.height=6}
+plot(cars)
+
+```
+
+```{r fig.cap= "Scatter plot of cars data"}
+plot(cars)
+
+```
+# Combine
+```{r fig.width=10, fig.height=5, fig.cap="Updated car plot"}
+plot(cars)
+
+```
+
+#ggplot
+
+
+```{r fig.width=10, fig.height=5, fig.cap="Updated car plot"}
+plot(cars)
+
+```
+
+##Activity Feb13
+#1 Summary
+```{r}
+summary(ChickWeight)
+
+```
+
+#2 ggplot
+
+```{r fig.width=10, fig.height=5, fig.cap="Change in chick weight depending on diet"}
+library(ggplot2)
+ggplot(ChickWeight, aes(x = Time, y = weight, group = Chick, color = Diet)) +
+  geom_line() +
+  facet_wrap(~ Diet) +
+  labs(title = "Chick Weight vs Time",
+       subtitle= "For different diets",
+       x = "Time (Days)",
+       y = "Weight (g)") +
+  theme_bw()+
+  theme(
+    legend.position = "bottom",
+    axis.line = element_line(linewidth = 0.75),
+    axis.line.x.bottom = element_line(colour = "brown"),
+    axis.line.y.left = element_line(colour = "brown"))
+
+```
+```
