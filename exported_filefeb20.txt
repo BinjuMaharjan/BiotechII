@@ -1,0 +1,78 @@
+Welcome to Ubuntu 24.04.1 LTS (GNU/Linux 5.10.16.3-microsoft-standard-WSL2 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu Feb 20 17:42:58 EST 2025
+
+  System load:  0.0                Processes:             9
+  Usage of /:   0.6% of 250.98GB   Users logged in:       0
+  Memory usage: 1%                 IPv4 address for eth0: 172.30.127.24
+  Swap usage:   0%
+
+This message is shown once a day. To disable it please create the
+/home/binju/.hushlogin file.
+binju@H225-LT3520-06:~$ ls
+nactivity.txt  practice_folder  test.sh
+binju@H225-LT3520-06:~$ nano test.sh
+binju@H225-LT3520-06:~$ bash test.sh
+Hello, World!
+binju@H225-LT3520-06:~$ nano activity.sh
+binju@H225-LT3520-06:~$ cd
+binju@H225-LT3520-06:~$ pwd
+/home/binju
+binju@H225-LT3520-06:~$ nano activity.sh
+
+binju@H225-LT3520-06:~$ nano activity.sh
+binju@H225-LT3520-06:~$ nano activity.sh
+binju@H225-LT3520-06:~$ bash actvity.sh
+bash: actvity.sh: No such file or directory
+binju@H225-LT3520-06:~$ bash activity.sh
+binju@H225-LT3520-06:~$ ls
+activity.sh  nactivity.txt  practice_folder  test.sh  testfiles
+binju@H225-LT3520-06:~$ cd activity.sh
+-bash: cd: activity.sh: Not a directory
+binju@H225-LT3520-06:~$ cd testfiles
+binju@H225-LT3520-06:~/testfiles$ ls
+empty.txt
+binju@H225-LT3520-06:~/testfiles$ nano activity.sh
+binju@H225-LT3520-06:~/testfiles$ cd..
+cd..: command not found
+binju@H225-LT3520-06:~/testfiles$ cd ..
+binju@H225-LT3520-06:~$ cd testfiles
+binju@H225-LT3520-06:~/testfiles$ cd empty.txt
+-bash: cd: empty.txt: Not a directory
+binju@H225-LT3520-06:~/testfiles$ nano activity.sh
+binju@H225-LT3520-06:~/testfiles$ nano activity.sh
+binju@H225-LT3520-06:~/testfiles$ bash activity.sh
+activity.sh: line 3: cd: /home/binju/testfiles/empty.txt: Not a directory
+Goodevening
+binju@H225-LT3520-06:~/testfiles$ ls
+activity.sh  empty.txt
+binju@H225-LT3520-06:~/testfiles$ bash empty.txt
+binju@H225-LT3520-06:~/testfiles$ nano empty.txt
+binju@H225-LT3520-06:~/testfiles$ nano empty.txt
+binju@H225-LT3520-06:~/testfiles$ bash empty.txt
+Goodevening and goodnight
+binju@H225-LT3520-06:~/testfiles$ ls
+activity.sh  empty.txt
+binju@H225-LT3520-06:~/testfiles$ rmdir activity.sh
+rmdir: failed to remove 'activity.sh': Not a directory
+binju@H225-LT3520-06:~/testfiles$ rm activity.sh
+binju@H225-LT3520-06:~/testfiles$ ls
+empty.txt
+binju@H225-LT3520-06:~/testfiles$ nano activity.sh
+binju@H225-LT3520-06:~/testfiles$ nano empty.txt
+binju@H225-LT3520-06:~/testfiles$ cd..
+cd..: command not found
+binju@H225-LT3520-06:~/testfiles$ cd ..
+binju@H225-LT3520-06:~$ nano activity.sh
+binju@H225-LT3520-06:~$ nano activity.sh
+binju@H225-LT3520-06:~$ nano activty.sh
+binju@H225-LT3520-06:~$ nano activity.sh
+binju@H225-LT3520-06:~$ ls
+activity.sh  nactivity.txt  note.sh  practice_folder  test.sh  testfiles
+binju@H225-LT3520-06:~$ bash note.sh
+Goodafternoon and Goodnight
+binju@H225-LT3520-06:~$
