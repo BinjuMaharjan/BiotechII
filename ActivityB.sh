@@ -35,3 +35,6 @@ bcftools stats variantsB.vcf>summaryB.txt
 bcftools filter -e 'QUAL<20' -o filtered_by_qualB.vcf variantsB.vcf
 bcftools filter -e 'DP<10' -o filtered_by_depthB.vcf variantsB.vcf
 bcftools filter -e 'QUAL<20 || DP<10' -o filtered_variantsB.vcf variantsB.vcf
+
+#Summarize the final VCF file
+bcftools stats filtered_variantsB.vcf>summaryB.txt
