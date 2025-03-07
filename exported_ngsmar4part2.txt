@@ -1,0 +1,94 @@
+Windows Subsystem for Linux is now available in the Microsoft Store!
+You can upgrade by running 'wsl.exe --update' or by visiting https://aka.ms/wslstorepage
+Installing WSL from the Microsoft Store will give you the latest WSL updates, faster.
+For more information please visit https://aka.ms/wslstoreinfo
+
+Welcome to Ubuntu 24.04.1 LTS (GNU/Linux 5.10.16.3-microsoft-standard-WSL2 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Tue Mar  4 17:39:25 EST 2025
+
+  System load:  0.0                Processes:             9
+  Usage of /:   3.2% of 250.98GB   Users logged in:       0
+  Memory usage: 1%                 IPv4 address for eth0: 172.31.2.103
+  Swap usage:   0%
+
+This message is shown once a day. To disable it please create the
+/home/binju/.hushlogin file.
+binju@H225-LT3520-06:~$ sudo apt install bcftools
+[sudo] password for binju:
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+bcftools is already the newest version (1.19-1build2).
+bcftools set to manually installed.
+0 upgraded, 0 newly installed, 0 to remove and 109 not upgraded.
+binju@H225-LT3520-06:~$ bcftools mpileup -Ou -f reference.fa sort/sampleA.sorted.bam > bcf/sampleA.mpileup
+-bash: bcf/sampleA.mpileup: No such file or directory
+binju@H225-LT3520-06:~$ bcftools mpileup -Ou -f reference.fa sort/sampleA.sorted.bam > sampleA.mpileup
+[mpileup] 1 samples in 1 input files
+[mpileup] maximum number of reads per input file set to -d 250
+binju@H225-LT3520-06:~$ bcftools call -mv -Ob -o variantsA.bcf sampleA.mpileup
+Note: none of --samples-file, --ploidy or --ploidy-file given, assuming all sites are diploid
+binju@H225-LT3520-06:~$ ls
+activity.sh                      note.sh           reference.fa.sa                   sampleA_R1_fastqc.html            sort
+bam                              practice_folder   reference.fa:Zone.Identifier      sampleA_R1_fastqc.zip             test.sh
+example_snp.vcf                  reference.fa      sam                               sampleA_R2.fq.gz                  testfiles
+example_snp.vcf:Zone.Identifier  reference.fa.amb  sampleA.mpileup                   sampleA_R2.fq.gz:Zone.Identifier  trim
+igv                              reference.fa.ann  sampleA_R1.fq.gz                  sampleB_R1.fq.gz                  variantsA.bcf
+igv_snapshot.png                 reference.fa.bwt  sampleA_R1.fq.gz:Zone.Identifier  sampleB_R1.fq.gz:Zone.Identifier
+nactivity.txt                    reference.fa.fai  sampleA_R1.out_fastqc.html        sampleB_R2.fq.gz
+new.sh                           reference.fa.pac  sampleA_R1.out_fastqc.zip         sampleB_R2.fq.gz:Zone.Identifier
+binju@H225-LT3520-06:~$ bcftools view variantsA.bcf > variantsA.vcf
+binju@H225-LT3520-06:~$ less variantsA.vcf
+binju@H225-LT3520-06:~$ less variantsA.vcf
+binju@H225-LT3520-06:~$ bcftools stats variantsA.vcf > summary.txt
+binju@H225-LT3520-06:~$ less summary.txt
+binju@H225-LT3520-06:~$ less summary.txt
+binju@H225-LT3520-06:~$ bcftools silter -e 'QUAL <20' -o filtered_by_qual.vcf variantsA.vcf
+[E::main] unrecognized command 'silter'
+binju@H225-LT3520-06:~$  bcftools filter -e 'QUAL <20' -o filtered_by_qual.vcf variantsA.vcf
+binju@H225-LT3520-06:~$  bcftools silter -e 'DP <10' -o filtered_by_depth.vcf variantsA.vcf
+[E::main] unrecognized command 'silter'
+binju@H225-LT3520-06:~$  bcftools filter -e 'DP <10' -o filtered_by_depth.vcf variantsA.vcf
+binju@H225-LT3520-06:~$ ls
+activity.sh                      new.sh            reference.fa.sa                   sampleA_R1_fastqc.zip             test.sh
+bam                              note.sh           reference.fa:Zone.Identifier      sampleA_R2.fq.gz                  testfiles
+example_snp.vcf                  practice_folder   sam                               sampleA_R2.fq.gz:Zone.Identifier  trim
+example_snp.vcf:Zone.Identifier  reference.fa      sampleA.mpileup                   sampleB_R1.fq.gz                  variantsA.bcf
+filtered_by_depth.vcf            reference.fa.amb  sampleA_R1.fq.gz                  sampleB_R1.fq.gz:Zone.Identifier  variantsA.vcf
+filtered_by_qual.vcf             reference.fa.ann  sampleA_R1.fq.gz:Zone.Identifier  sampleB_R2.fq.gz
+igv                              reference.fa.bwt  sampleA_R1.out_fastqc.html        sampleB_R2.fq.gz:Zone.Identifier
+igv_snapshot.png                 reference.fa.fai  sampleA_R1.out_fastqc.zip         sort
+nactivity.txt                    reference.fa.pac  sampleA_R1_fastqc.html            summary.txt
+binju@H225-LT3520-06:~$ bcftools filter -e 'QUAL<20 || DP <10' -o filtered_variants.vcf variantsA.vcf
+binju@H225-LT3520-06:~$ ls
+activity.sh                      nactivity.txt     reference.fa.pac                  sampleA_R1_fastqc.html            summary.txt
+bam                              new.sh            reference.fa.sa                   sampleA_R1_fastqc.zip             test.sh
+example_snp.vcf                  note.sh           reference.fa:Zone.Identifier      sampleA_R2.fq.gz                  testfiles
+example_snp.vcf:Zone.Identifier  practice_folder   sam                               sampleA_R2.fq.gz:Zone.Identifier  trim
+filtered_by_depth.vcf            reference.fa      sampleA.mpileup                   sampleB_R1.fq.gz                  variantsA.bcf
+filtered_by_qual.vcf             reference.fa.amb  sampleA_R1.fq.gz                  sampleB_R1.fq.gz:Zone.Identifier  variantsA.vcf
+filtered_variants.vcf            reference.fa.ann  sampleA_R1.fq.gz:Zone.Identifier  sampleB_R2.fq.gz
+igv                              reference.fa.bwt  sampleA_R1.out_fastqc.html        sampleB_R2.fq.gz:Zone.Identifier
+igv_snapshot.png                 reference.fa.fai  sampleA_R1.out_fastqc.zip         sort
+binju@H225-LT3520-06:~$ less filtered_by_depth.vcf
+binju@H225-LT3520-06:~$ less filtered_by_qual.vcf
+binju@H225-LT3520-06:~$ less filtered_variants.vcf
+binju@H225-LT3520-06:~$ bcftools stats filtered_by_depth.vcf > summary_depth.txt
+binju@H225-LT3520-06:~$ bcftools stats filtered_by_qual.vcf > summary_qual.txt
+binju@H225-LT3520-06:~$ bcftools stats filtered_by_variants.vcf > summary_variants.txt
+[E::hts_open_format] Failed to open file "filtered_by_variants.vcf" : No such file or directory
+Failed to read from filtered_by_variants.vcf: No such file or directory
+binju@H225-LT3520-06:~$ bcftools stats filtered_variants.vcf > summary_variants.txt
+binju@H225-LT3520-06:~$ less summary_variants.txt
+binju@H225-LT3520-06:~$ less summary_depth.txt
+binju@H225-LT3520-06:~$ less summary_qual.txt
+binju@H225-LT3520-06:~$ less summary_qual.txt
+binju@H225-LT3520-06:~$ less summary_variants.txt
+binju@H225-LT3520-06:~$ less summary_variants.txt
+binju@H225-LT3520-06:~$ less summary_depth.txt
+binju@H225-LT3520-06:~$
