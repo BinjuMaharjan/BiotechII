@@ -1,0 +1,134 @@
+Welcome to Ubuntu 24.04.1 LTS (GNU/Linux 5.15.167.4-microsoft-standard-WSL2 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu Mar 20 17:35:05 EDT 2025
+
+  System load:  0.0                Processes:             62
+  Usage of /:   9.3% of 250.92GB   Users logged in:       0
+  Memory usage: 5%                 IPv4 address for eth0: 172.17.252.129
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+This message is shown once a day. To disable it please create the
+/home/binju/.hushlogin file.
+binju@H225-LT3520-06:~$ ls
+ActivityB.sh                     filtered_variantsB.vcf  reference.fa.sa                   sampleB_R1.fq.gz                  summary_variants.txt
+RNAseq_data                      igv                     reference.fa:Zone.Identifier      sampleB_R1.fq.gz:Zone.Identifier  summary_variantsB
+RNAseq_data.zip                  igv_snapshot.png        sam                               sampleB_R1_fastqc.html            summary_variantsB.txt
+activity.sh                      nactivity.txt           sampleA.mpileup                   sampleB_R1_fastqc.zip             test.sh
+bam                              new.sh                  sampleA_R1.fq.gz                  sampleB_R2.fq.gz                  testfiles
+depth_summaryB.txt               note.sh                 sampleA_R1.fq.gz:Zone.Identifier  sampleB_R2.fq.gz:Zone.Identifier  trim
+example_snp.vcf                  practice_folder         sampleA_R1.out_fastqc.html        sort                              variantsA.bcf
+example_snp.vcf:Zone.Identifier  reference.fa            sampleA_R1.out_fastqc.zip         summary.txt                       variantsA.vcf
+filtered_by_depth.vcf            reference.fa.amb        sampleA_R1_fastqc.html            summaryB.txt                      variantsB.bcf
+filtered_by_depthB.vcf           reference.fa.ann        sampleA_R1_fastqc.zip             summary_depth.txt                 variantsB.vcf
+filtered_by_qual.vcf             reference.fa.bwt        sampleA_R2.fq.gz                  summary_depthB                    work.txt
+filtered_by_qualB.vcf            reference.fa.fai        sampleA_R2.fq.gz:Zone.Identifier  summary_qual.txt
+filtered_variants.vcf            reference.fa.pac        sampleB.mpileup                   summary_qualB
+binju@H225-LT3520-06:~$ cd RNAseq_data
+binju@H225-LT3520-06:~/RNAseq_data$ ls
+alltogether.sh  alltogether.txt  genes  genome  indexes  new_sam  samples  summary
+binju@H225-LT3520-06:~/RNAseq_data$ cd new
+-bash: cd: new: No such file or directory
+binju@H225-LT3520-06:~/RNAseq_data$ cd new_sam
+binju@H225-LT3520-06:~/RNAseq_data/new_sam$ ls
+SAMPLE1.sam  SAMPLE2.sam
+binju@H225-LT3520-06:~/RNAseq_data/new_sam$ cd ..
+binju@H225-LT3520-06:~/RNAseq_data$ samtools sort -@8 -o SAMPLE1.sorted.bam new_sam/SAMPLE1.sam
+[bam_sort_core] merging from 0 files and 8 in-memory blocks...
+binju@H225-LT3520-06:~/RNAseq_data$ ls
+SAMPLE1.sorted.bam  alltogether.sh  alltogether.txt  genes  genome  indexes  new_sam  samples  summary
+binju@H225-LT3520-06:~/RNAseq_data$ samtools index SAMPLE1.sorted.bam
+binju@H225-LT3520-06:~/RNAseq_data$ igv
+INFO [Mar 20,2025 17:39] [Main] Startup  IGV Version user not_set
+INFO [Mar 20,2025 17:39] [Main] Java 21.0.6 (build 21.0.6+7-Ubuntu-124.04.1) 2025-01-21
+INFO [Mar 20,2025 17:39] [Main] Java Vendor: Ubuntu https://ubuntu.com/
+INFO [Mar 20,2025 17:39] [Main] JVM: OpenJDK 64-Bit Server VM
+INFO [Mar 20,2025 17:39] [Main] OS: Linux 5.15.167.4-microsoft-standard-WSL2 amd64
+INFO [Mar 20,2025 17:39] [Main] IGV Directory: /home/binju/igv
+MESA: error: ZINK: failed to choose pdev
+glx: failed to create drisw screen
+INFO [Mar 20,2025 17:39] [CommandListener] Listening on port 60151
+INFO [Mar 20,2025 17:39] [GenomeManager] Loading genome: https://igv.org/genomes/json/hg38.json
+INFO [Mar 20,2025 17:39] [TrackLoader] Loading resource:  https://hgdownload.soe.ucsc.edu/goldenPath/hg38/database/ncbiRefSeqSelect.txt.gz
+INFO [Mar 20,2025 17:40] [ShutdownThread] Shutting down
+binju@H225-LT3520-06:~/RNAseq_data$ igv
+INFO [Mar 20,2025 17:40] [Main] Startup  IGV Version user not_set
+INFO [Mar 20,2025 17:40] [Main] Java 21.0.6 (build 21.0.6+7-Ubuntu-124.04.1) 2025-01-21
+INFO [Mar 20,2025 17:40] [Main] Java Vendor: Ubuntu https://ubuntu.com/
+INFO [Mar 20,2025 17:40] [Main] JVM: OpenJDK 64-Bit Server VM
+INFO [Mar 20,2025 17:40] [Main] OS: Linux 5.15.167.4-microsoft-standard-WSL2 amd64
+INFO [Mar 20,2025 17:40] [Main] IGV Directory: /home/binju/igv
+INFO [Mar 20,2025 17:40] [CommandListener] Listening on port 60151
+INFO [Mar 20,2025 17:40] [GenomeManager] Loading genome: https://igv.org/genomes/json/hg38.json
+INFO [Mar 20,2025 17:40] [TrackLoader] Loading resource:  https://hgdownload.soe.ucsc.edu/goldenPath/hg38/database/ncbiRefSeqSelect.txt.gz
+INFO [Mar 20,2025 17:41] [GenomeManager] Loading genome: /home/binju/RNAseq_data/genome/chrX.fa
+INFO [Mar 20,2025 17:41] [FastaUtils] Creating index file at /home/binju/RNAseq_data/genome/chrX.fa.fai
+WARNING [Mar 20,2025 17:41] [LoadFromServerAction] No data found for current genome.
+SEVERE [Mar 20,2025 17:41] [LongRunningTask] Exception running task
+SEVERE [Mar 20,2025 17:41] [LongRunningTask] java.util.ConcurrentModificationException
+        at java.base/java.util.WeakHashMap$HashIterator.nextEntry(WeakHashMap.java:815)
+        at java.base/java.util.WeakHashMap$KeyIterator.next(WeakHashMap.java:848)
+        at java.base/java.util.AbstractCollection.toArray(AbstractCollection.java:148)
+        at java.base/java.util.Collections$SetFromMap.toArray(Collections.java:5931)
+        at java.base/java.util.ArrayList.<init>(ArrayList.java:181)
+        at org.broad.igv.event.IGVEventBus.post(IGVEventBus.java:74)
+        at org.broad.igv.ui.panel.ReferenceFrame.jumpTo(ReferenceFrame.java:449)
+        at org.broad.igv.ui.panel.ReferenceFrame.jumpTo(ReferenceFrame.java:414)
+        at org.broad.igv.ui.action.SearchCommand.showSearchResult(SearchCommand.java:220)
+        at org.broad.igv.ui.action.SearchCommand.run(SearchCommand.java:97)
+        at org.broad.igv.util.LongRunningTask.call(LongRunningTask.java:72)
+        at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+        at java.base/java.lang.Thread.run(Thread.java:1583)
+
+INFO [Mar 20,2025 17:42] [TrackLoader] Loading resource:  /home/binju/RNAseq_data/SAMPLE1.sorted.bam
+INFO [Mar 20,2025 17:42] [TrackLoader] Loading resource:  /home/binju/RNAseq_data/genes/chrX.gtf
+
+^[[3~^[[3~INFO [Mar 20,2025 17:48] [ShutdownThread] Shutting down
+binju@H225-LT3520-06:~/RNAseq_data$
+binju@H225-LT3520-06:~/RNAseq_data$ igv
+INFO [Mar 20,2025 17:49] [Main] Startup  IGV Version user not_set
+INFO [Mar 20,2025 17:49] [Main] Java 21.0.6 (build 21.0.6+7-Ubuntu-124.04.1) 2025-01-21
+INFO [Mar 20,2025 17:49] [Main] Java Vendor: Ubuntu https://ubuntu.com/
+INFO [Mar 20,2025 17:49] [Main] JVM: OpenJDK 64-Bit Server VM
+INFO [Mar 20,2025 17:49] [Main] OS: Linux 5.15.167.4-microsoft-standard-WSL2 amd64
+INFO [Mar 20,2025 17:49] [Main] IGV Directory: /home/binju/igv
+INFO [Mar 20,2025 17:49] [CommandListener] Listening on port 60151
+INFO [Mar 20,2025 17:49] [GenomeManager] Loading genome: /home/binju/RNAseq_data/genome/chrX.fa
+WARNING [Mar 20,2025 17:49] [LoadFromServerAction] No data found for current genome.
+INFO [Mar 20,2025 17:49] [GenomeManager] Loading genome: /home/binju/RNAseq_data/genome/chrX.fa
+WARNING [Mar 20,2025 17:49] [LoadFromServerAction] No data found for current genome.
+INFO [Mar 20,2025 17:50] [ShutdownThread] Shutting down
+binju@H225-LT3520-06:~/RNAseq_data$ igv
+INFO [Mar 20,2025 17:50] [Main] Startup  IGV Version user not_set
+INFO [Mar 20,2025 17:50] [Main] Java 21.0.6 (build 21.0.6+7-Ubuntu-124.04.1) 2025-01-21
+INFO [Mar 20,2025 17:50] [Main] Java Vendor: Ubuntu https://ubuntu.com/
+INFO [Mar 20,2025 17:50] [Main] JVM: OpenJDK 64-Bit Server VM
+INFO [Mar 20,2025 17:50] [Main] OS: Linux 5.15.167.4-microsoft-standard-WSL2 amd64
+INFO [Mar 20,2025 17:50] [Main] IGV Directory: /home/binju/igv
+INFO [Mar 20,2025 17:50] [CommandListener] Listening on port 60151
+INFO [Mar 20,2025 17:50] [GenomeManager] Loading genome: /home/binju/RNAseq_data/genome/chrX.fa
+WARNING [Mar 20,2025 17:50] [LoadFromServerAction] No data found for current genome.
+INFO [Mar 20,2025 17:50] [GenomeManager] Loading genome: /home/binju/RNAseq_data/genome/chrX.fa
+WARNING [Mar 20,2025 17:50] [LoadFromServerAction] No data found for current genome.
+binju@H225-LT3520-06:~/RNAseq_data$ igv
+INFO [Mar 20,2025 17:51] [Main] Startup  IGV Version user not_set
+INFO [Mar 20,2025 17:51] [Main] Java 21.0.6 (build 21.0.6+7-Ubuntu-124.04.1) 2025-01-21
+INFO [Mar 20,2025 17:51] [Main] Java Vendor: Ubuntu https://ubuntu.com/
+INFO [Mar 20,2025 17:51] [Main] JVM: OpenJDK 64-Bit Server VM
+INFO [Mar 20,2025 17:51] [Main] OS: Linux 5.15.167.4-microsoft-standard-WSL2 amd64
+INFO [Mar 20,2025 17:51] [Main] IGV Directory: /home/binju/igv
+INFO [Mar 20,2025 17:51] [CommandListener] Listening on port 60151
+INFO [Mar 20,2025 17:51] [GenomeManager] Loading genome: /home/binju/RNAseq_data/genome/chrX.fa
+WARNING [Mar 20,2025 17:51] [LoadFromServerAction] No data found for current genome.
+INFO [Mar 20,2025 17:51] [TrackLoader] Loading resource:  /home/binju/RNAseq_data/SAMPLE1.sorted.bam
+INFO [Mar 20,2025 17:51] [TrackLoader] Loading resource:  /home/binju/RNAseq_data/genes/chrX.gtf
